@@ -1,10 +1,17 @@
 public class FizzBuzz {
+  // Fix the logic in the solution so that all 3 test cases pass.
   public String fizzBuzzString(String str) {
-      if (str.startsWith("f"))  return "Fizz";
-      if (str.endsWith("b")) return "Buzz";
-
-      if (str.startsWith("f") && str.endsWith("b")) return "FizzBuzz";
+    try {
+      if (str.startsWith("f") && str.endsWith("b"))
+        return "FizzBuzz";
+      if (str.startsWith("f"))
+        return "Fizz";
+      if (str.endsWith("b"))
+        return "Buzz";
 
       return str;
+    } catch (NullPointerException e) {
+      return null;
+    }
   }
 }
