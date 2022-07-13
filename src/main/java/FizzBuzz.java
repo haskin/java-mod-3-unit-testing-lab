@@ -9,7 +9,7 @@ public class FizzBuzz {
       if (str.endsWith("b"))
         return "Buzz";
 
-      return str;
+      return str; // Returns original string if no conversion possible
     } catch (NullPointerException e) {
       return null;
     }

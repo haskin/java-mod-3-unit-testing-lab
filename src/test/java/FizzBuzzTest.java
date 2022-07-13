@@ -1,14 +1,21 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class FizzBuzzTest {
 
-    private FizzBuzz fizzBuzz = new FizzBuzz();
+    private FizzBuzz fizzBuzz;
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
     private static final String FIZZ_BUZZ = "FizzBuzz";
+
+    @BeforeEach
+    void setup() {
+        fizzBuzz = new FizzBuzz();
+    }
+
 
     // Test the "starts with f" case first - this should pass.
     @Test
@@ -32,5 +39,11 @@ public class FizzBuzzTest {
     @Test
     void null_when_input_is_null() {
         assertNull(fizzBuzz.fizzBuzzString(null));
+    }
+
+    @Test
+    void Original_String_when_input_is_not_a_FizzBuzz() {
+        String notFizzBuzz = "str";
+        assertEquals(notFizzBuzz, fizzBuzz.fizzBuzzString(notFizzBuzz));
     }
 }
