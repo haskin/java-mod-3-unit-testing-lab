@@ -42,7 +42,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    void Original_String_when_input_is_not_a_FizzBuzz() {
+    void original_string_when_input_is_not_a_FizzBuzz() {
         String notFizzBuzz = "str";
         assertEquals(notFizzBuzz, fizzBuzz.fizzBuzzString(notFizzBuzz));
     }
